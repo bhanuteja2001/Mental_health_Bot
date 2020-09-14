@@ -1,0 +1,9 @@
+---
+applications:
+- name: covid_19_bot
+  memory: 1.0GB
+  disk_quota: 1.0GB
+  random-route: true
+  parameters:
+    memory: 1.0GB
+    buildpack: 'python_buildpack'
