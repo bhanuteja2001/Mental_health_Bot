@@ -9,11 +9,11 @@ class Depress:
         #print(result)
         parameters = result.get("parameters")
         person_age = parameters.get('person_age')
-        df = pd.read_csv('scaled.csv')
+        df = pd.read_csv('E:\Mental health Chatbot\MLDepressionTest\scaled.csv')
         Scaler = MinMaxScaler()
         df['Age'] = Scaler.fit_transform(df[['Age']])
         person_age = Scaler.transform([[person_age]])[0][0]
-        print("Person Age = ",person_age)
+        #print("Person Age = ",person_age)
 
         Gender = parameters.get('Gender')
 
@@ -24,7 +24,7 @@ class Depress:
         else:
             Gender = 2
 
-        print("Gender : ",Gender)
+        #print("Gender : ",Gender)
 
         family_history = parameters.get('family_history')
 
@@ -33,7 +33,7 @@ class Depress:
         else:
             family_history = 1
 
-        print("Family History : ", family_history)
+        #print("Family History : ", family_history)
 
         benefits = parameters.get('benefits')
 
@@ -44,7 +44,7 @@ class Depress:
         else:
             benefits = 2
 
-        print("Benefits",benefits)
+        #print("Benefits",benefits)
 
         care_options = parameters.get('care_options')
 
@@ -55,7 +55,7 @@ class Depress:
         else:
             care_options = 2
 
-        print("Care Options",care_options)
+        #print("Care Options",care_options)
 
         anonymity = parameters.get('anonymity')
 
@@ -65,7 +65,7 @@ class Depress:
             anonymity = 1
         else:
             anonymity = 2
-        print("Anonymity :",anonymity)
+        #print("Anonymity :",anonymity)
 
         Leave = parameters.get('leave')
 
@@ -79,7 +79,7 @@ class Depress:
             Leave = 3
         else:
             Leave = 4
-        print("Leave : ",Leave)
+        #print("Leave : ",Leave)
 
         Work_interfere = parameters.get('work_interfere')
 
@@ -94,7 +94,7 @@ class Depress:
         else:
             Work_interfere = 4
 
-        print("Work Interfere",Work_interfere)
+        #print("Work Interfere",Work_interfere)
 
         physhealthinterview = parameters.get('physhealthinterview')
 
@@ -105,7 +105,7 @@ class Depress:
         else:
             physhealthinterview = 2
 
-        print("Physical Interview",physhealthinterview)
+        #print("Physical Interview",physhealthinterview)
 
         remote_work = parameters.get('remote_work')
 
@@ -114,7 +114,7 @@ class Depress:
         else:
             remote_work = 1
 
-        print("Remote Work",remote_work)
+        #print("Remote Work",remote_work)
 
         coworkers = parameters.get('coworkers')
 
@@ -125,7 +125,7 @@ class Depress:
         else:
             coworkers = 2
 
-        print("Co-workers",coworkers)
+        #print("Co-workers",coworkers)
 
         mentalhealthinterview = parameters.get('mentalhealthinterview')
 
@@ -136,7 +136,7 @@ class Depress:
         else:
             mentalhealthinterview = 2
 
-        print("Mental Health Interview",mentalhealthinterview)
+        #print("Mental Health Interview",mentalhealthinterview)
 
         no_employees = parameters.get('no_employees')
 
@@ -153,7 +153,7 @@ class Depress:
         else:
             no_employees = 5
 
-        print("No of Employees",no_employees)
+        #print("No of Employees",no_employees)
 
         wellness_program = parameters.get('wellness_program')
 
@@ -164,7 +164,7 @@ class Depress:
         else:
             wellness_program = 2
 
-        print("Wellness Programs",wellness_program)
+        #print("Wellness Programs",wellness_program)
 
         tech_company = parameters.get('tech_company')
 
@@ -173,7 +173,7 @@ class Depress:
         else:
             tech_company= 1
 
-        print("Tech Company",tech_company)
+        #print("Tech Company",tech_company)
 
         seek_help = parameters.get('seek_help')
 
@@ -184,7 +184,7 @@ class Depress:
         else:
             seek_help = 2
 
-        print("Seek Help",seek_help)
+        #print("Seek Help",seek_help)
 
         supervisor = parameters.get('supervisor')
 
@@ -195,7 +195,7 @@ class Depress:
         else:
             supervisor = 2
 
-        print("Supervisor : ",supervisor)
+        #print("Supervisor : ",supervisor)
 
 
         mentalhealthconsequence = parameters.get('mentalhealthconsequence')
@@ -207,7 +207,7 @@ class Depress:
         else:
             mentalhealthconsequence = 2
 
-        print("Metal Health Consequence",mentalhealthconsequence)
+        #print("Metal Health Consequence",mentalhealthconsequence)
 
         physhealthconsequence = parameters.get('physhealthconsequence')
 
@@ -218,7 +218,7 @@ class Depress:
         else:
             physhealthconsequence = 2
 
-        print("Physical Health Consequence",physhealthconsequence)
+        #print("Physical Health Consequence",physhealthconsequence)
 
         mentalvsphysical = parameters.get('mentalvsphysical')
 
@@ -229,22 +229,23 @@ class Depress:
         else:
             mentalvsphysical = 2
 
-        print("Mental vs Physical",mentalvsphysical)
+        #print("Mental vs Physical",mentalvsphysical)
 
 
         Input = [person_age, Gender, family_history, benefits, care_options, anonymity, Leave, Work_interfere, physhealthinterview, remote_work, coworkers, mentalhealthinterview, no_employees, wellness_program, tech_company, seek_help, supervisor, mentalhealthconsequence, physhealthconsequence, mentalvsphysical]
 
-        print(Input)
+        #print(Input)
 
-        pickle_in = open('final.pkl', "rb")
+        pickle_in = open("E:\Mental health Chatbot\MLDepressionTest\Final.pkl", "rb")
         classifier = pickle.load(pickle_in)
         print(classifier.predict([Input]))
 
-        return Result(classifier.predict([Input])[0])
+        return (classifier.predict([Input]))
 
-def Result(val):
+"""def Result(val):
 
     if val == 1:
+        print("visit")
         return {
 
             "fulfillmentMessages": [
@@ -260,6 +261,7 @@ def Result(val):
             ]
         }
     else:
+        print("don't visit")
         return {
 
             "fulfillmentMessages": [
@@ -273,7 +275,6 @@ def Result(val):
                 },
 
             ]
-        }
-
+        }"""
 
 

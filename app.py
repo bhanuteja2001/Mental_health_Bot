@@ -67,7 +67,40 @@ def processRequest(req):
         log.saveConversations(sessionID, cust_reason, intent, db, cust_email, cust_name, cust_phone)
         prepareEmail(cust_email)
     elif intent == 'Depression_workplace':
-        Depression_test(result)
+        val = Depression_test(result)
+        if val == 1:
+            print("visit")
+            return {
+
+                "fulfillmentMessages": [
+                    {
+                        "text": {
+                            "text": [
+                                "It is advisable to visit a psychiatrist"
+                            ]
+
+                        }
+                    },
+
+                ]
+            }
+        else:
+            print("don't visit")
+            return {
+
+                "fulfillmentMessages": [
+                    {
+                        "text": {
+                            "text": [
+                                "You are alright! Take care !!"
+                            ]
+
+                        }
+                    },
+
+                ]
+            }
+
     else:
         return {
             "fulfillmentText": "something went wrong,Lets start from the begning, Say Hi",
@@ -98,8 +131,7 @@ def prepareEmail(contact_email):
 
 def Depression_test(result):
     depress_value = flask_api.Depress()
-    depress_value.Inputs(result)
-
+    return depress_value.Inputs(result)
 
 
 if __name__ == '__main__':
@@ -107,4 +139,4 @@ if __name__ == '__main__':
     print("Starting app on port %d" % port)
     app.run(debug=False, port=port, host='0.0.0.0')
 """if __name__ == "__main__":
-    app.run()"""
+    app.run()""""
