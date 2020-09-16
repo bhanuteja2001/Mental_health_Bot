@@ -9,7 +9,7 @@ class Depress:
         #print(result)
         parameters = result.get("parameters")
         person_age = parameters.get('person_age')
-        df = pd.read_csv('E:\Mental health Chatbot\MLDepressionTest\scaled.csv')
+        df = pd.read_csv('scaled.csv')
         Scaler = MinMaxScaler()
         df['Age'] = Scaler.fit_transform(df[['Age']])
         person_age = Scaler.transform([[person_age]])[0][0]
@@ -17,9 +17,9 @@ class Depress:
 
         Gender = parameters.get('Gender')
 
-        if Gender == 'female':
+        if Gender == 'female' or 'F' or 'Lady' or 'f':
             Gender = 0
-        elif Gender == 'male':
+        elif Gender == 'male' or 'M' or 'm' or 'Male':
             Gender = 1
         else:
             Gender = 2
@@ -28,7 +28,7 @@ class Depress:
 
         family_history = parameters.get('family_history')
 
-        if family_history == 'No':
+        if family_history == 'No' or 'Nah' or 'Nope' or 'no':
             family_history = 0
         else:
             family_history = 1
@@ -37,9 +37,9 @@ class Depress:
 
         benefits = parameters.get('benefits')
 
-        if benefits == 'No idea':
+        if benefits == 'No Idea' or 'no idea':
             benefits = 0
-        elif benefits == 'No':
+        elif benefits == 'No' or 'Nah' or 'Nope' or 'no':
             benefits = 1
         else:
             benefits = 2
@@ -48,9 +48,9 @@ class Depress:
 
         care_options = parameters.get('care_options')
 
-        if care_options == 'No':
+        if care_options == 'No' or 'Nah' or 'Nope' or 'no':
             care_options = 0
-        elif care_options == 'Not Sure':
+        elif care_options == 'Not Sure' or 'no idea':
             care_options = 1
         else:
             care_options = 2
@@ -59,9 +59,9 @@ class Depress:
 
         anonymity = parameters.get('anonymity')
 
-        if anonymity == 'No idea':
+        if anonymity == 'No Idea' or 'no idea':
             anonymity = 0
-        elif anonymity == 'No':
+        elif anonymity == 'No' or 'Nah' or 'Nope' or 'no':
             anonymity = 1
         else:
             anonymity = 2
@@ -69,7 +69,7 @@ class Depress:
 
         Leave = parameters.get('leave')
 
-        if Leave == 'No idea':
+        if Leave == 'No Idea' or 'no idea':
             Leave = 0
         elif Leave == 'Somewhat difficult':
             Leave = 1
@@ -83,7 +83,7 @@ class Depress:
 
         Work_interfere = parameters.get('work_interfere')
 
-        if Work_interfere == 'No idea':
+        if Work_interfere == 'No Idea' or 'no idea':
             Work_interfere = 0
         elif Work_interfere == 'Never':
             Work_interfere = 1
@@ -100,7 +100,7 @@ class Depress:
 
         if physhealthinterview == 'maybe':
             physhealthinterview = 0
-        elif physhealthinterview == 'no':
+        elif physhealthinterview == 'No' or 'Nah' or 'Nope' or 'no':
             physhealthinterview = 1
         else:
             physhealthinterview = 2
@@ -118,7 +118,7 @@ class Depress:
 
         coworkers = parameters.get('coworkers')
 
-        if coworkers == 'no':
+        if coworkers == 'No' or 'Nah' or 'Nope' or 'no':
             coworkers = 0
         elif coworkers == 'Sometimes':
             coworkers = 1
@@ -131,7 +131,7 @@ class Depress:
 
         if mentalhealthinterview == 'Maybe':
             mentalhealthinterview = 0
-        elif mentalhealthinterview == 'no':
+        elif mentalhealthinterview == 'No' or 'Nah' or 'Nope' or 'no':
             mentalhealthinterview = 1
         else:
             mentalhealthinterview = 2
@@ -157,9 +157,9 @@ class Depress:
 
         wellness_program = parameters.get('wellness_program')
 
-        if wellness_program == 'No idea':
+        if wellness_program == 'No Idea' or 'no idea':
             wellness_program = 0
-        elif wellness_program == 'no':
+        elif wellness_program == 'No' or 'Nah' or 'Nope' or 'no':
             wellness_program = 1
         else:
             wellness_program = 2
@@ -168,7 +168,7 @@ class Depress:
 
         tech_company = parameters.get('tech_company')
 
-        if tech_company == 'no':
+        if tech_company == 'No' or 'Nah' or 'Nope' or 'no':
             tech_company = 0
         else:
             tech_company= 1
@@ -177,9 +177,9 @@ class Depress:
 
         seek_help = parameters.get('seek_help')
 
-        if seek_help == 'No idea':
+        if seek_help == 'No Idea' or 'no idea':
             seek_help = 0
-        elif seek_help == 'no':
+        elif seek_help == 'No' or 'Nah' or 'Nope' or 'no':
             seek_help = 1
         else:
             seek_help = 2
@@ -188,7 +188,7 @@ class Depress:
 
         supervisor = parameters.get('supervisor')
 
-        if supervisor == 'no':
+        if supervisor == 'No' or 'Nah' or 'Nope' or 'no':
             supervisor = 0
         elif supervisor == 'Some':
             supervisor = 1
@@ -200,9 +200,9 @@ class Depress:
 
         mentalhealthconsequence = parameters.get('mentalhealthconsequence')
 
-        if mentalhealthconsequence == 'maybe':
+        if mentalhealthconsequence == 'Maybe':
             mentalhealthconsequence = 0
-        elif mentalhealthconsequence == 'no':
+        elif mentalhealthconsequence == 'No' or 'Nah' or 'Nope' or 'no':
             mentalhealthconsequence = 1
         else:
             mentalhealthconsequence = 2
@@ -211,9 +211,9 @@ class Depress:
 
         physhealthconsequence = parameters.get('physhealthconsequence')
 
-        if physhealthconsequence == 'maybe':
+        if physhealthconsequence == 'Maybe':
             physhealthconsequence = 0
-        elif physhealthconsequence == 'no':
+        elif physhealthconsequence == 'No' or 'Nah' or 'Nope' or 'no':
             physhealthconsequence = 1
         else:
             physhealthconsequence = 2
@@ -222,9 +222,9 @@ class Depress:
 
         mentalvsphysical = parameters.get('mentalvsphysical')
 
-        if mentalvsphysical == 'no idea':
+        if mentalvsphysical == 'No Idea' or 'no idea':
             mentalvsphysical = 0
-        elif mentalvsphysical == 'No':
+        elif mentalvsphysical == 'No' or 'Nah' or 'Nope' or 'no':
             mentalvsphysical = 1
         else:
             mentalvsphysical = 2
@@ -236,7 +236,7 @@ class Depress:
 
         #print(Input)
 
-        pickle_in = open("E:\Mental health Chatbot\MLDepressionTest\Final.pkl", "rb")
+        pickle_in = open("Final.pkl", "rb")
         classifier = pickle.load(pickle_in)
         print(classifier.predict([Input]))
 
