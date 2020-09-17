@@ -246,7 +246,7 @@ class Depress:
         model = pickle.load(open('Final.pkl', 'rb'))
         print(model.predict([Input]))
 
-        return (classifier.predict([Input]))
+        return (model.predict([Input]))
 
 
 """def Result(val):
