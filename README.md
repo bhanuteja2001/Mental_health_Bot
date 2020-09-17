@@ -22,6 +22,7 @@ https://bot.dialogflow.com/6ca6c2f4-b1ab-4e96-820d-5ea28b47e769
 
 ![Screenshot (332)](https://user-images.githubusercontent.com/44323155/93438992-a061fa00-f8eb-11ea-99d9-ff23fc919f64.png)
 
+![Screenshot (333)](https://user-images.githubusercontent.com/44323155/93488630-331e8b00-f924-11ea-870e-1fc10f7c8599.png)
 
 ![Screenshot (244)](https://user-images.githubusercontent.com/44323155/87670715-d53bbe80-c78d-11ea-919b-fd688870d3cd.png)
 
