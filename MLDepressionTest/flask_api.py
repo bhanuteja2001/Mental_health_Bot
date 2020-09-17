@@ -240,11 +240,11 @@ class Depress:
         # print(Input)
 
         # Use pickle to load in the pre-trained model.
-        with open('MLDepressionTest/Final.pkl', 'rb') as f:
-            classifier = pickle.load(f)
+
         #pickle_in = open("E:\Mental health Chatbot\MLDepressionTest\Final.pkl", "rb")
         #classifier = pickle.load(pickle_in)
-        print(classifier.predict([Input]))
+        model = pickle.load(open('MLDepressionTest/Final.pkl', 'rb'))
+        print(model.predict([Input]))
 
         return (classifier.predict([Input]))
 
