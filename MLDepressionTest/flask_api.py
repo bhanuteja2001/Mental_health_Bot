@@ -243,7 +243,7 @@ class Depress:
 
         #pickle_in = open("E:\Mental health Chatbot\MLDepressionTest\Final.pkl", "rb")
         #classifier = pickle.load(pickle_in)
-        model = pickle.load(open('MLDepressionTest/Final.pkl', 'rb'))
+        model = pickle.load(open('Final.pkl', 'rb'))
         print(model.predict([Input]))
 
         return (classifier.predict([Input]))
