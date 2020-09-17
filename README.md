@@ -18,7 +18,7 @@
 * Sends email to the user on mental health care.
 * Recommends Videos and Blogs on Mental Health.
 
-![Screenshot (249)](https://user-images.githubusercontent.com/44323155/87671521-1a142500-c78f-11ea-8740-6ce05c14c15b.png)
+![Screenshot (332)](https://user-images.githubusercontent.com/44323155/93438992-a061fa00-f8eb-11ea-99d9-ff23fc919f64.png)
 
 
 ![Screenshot (244)](https://user-images.githubusercontent.com/44323155/87670715-d53bbe80-c78d-11ea-919b-fd688870d3cd.png)
