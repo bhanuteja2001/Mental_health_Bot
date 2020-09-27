@@ -1,6 +1,6 @@
 # Health Buddy (A Machine Learning Based Mental-Health-Bot) (Version 2.0)
 
-**Version 2.0 Updated!!!** 
+**Version 2.0 Updated with ML Based Test!!!** 
 
 ***This is a chatbot created for Mental Health Care***
 
