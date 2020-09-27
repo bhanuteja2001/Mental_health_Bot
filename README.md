@@ -1,12 +1,17 @@
-# Mental-Health-Bot (Version 2.0)
+# Health Buddy (A Machine Learning Based Mental-Health-Bot) (Version 2.0)
 
 **Version 2.0 Updated!!!** 
 
 ***This is a chatbot created for Mental Health Care***
 
-@Right_mind_bot on Telegram
+The Aim of this Project is to help Techies with there Mental Health Issues.
+It consists of a Machine Learning Based Test which recommends users for psychiatric therapy.
+It uses 2 Api's one for Daily quotes generated from an external sources and the other is used for ML test.
 
-https://bot.dialogflow.com/6ca6c2f4-b1ab-4e96-820d-5ea28b47e769
+
+Telegram - @Right_mind_bot
+
+Slack - https://bot.dialogflow.com/6ca6c2f4-b1ab-4e96-820d-5ea28b47e769
 
 
 * Made using Dialog Flow
