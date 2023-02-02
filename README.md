@@ -11,7 +11,7 @@ It uses 2 Api's one for Daily quotes generated from an external sources and the 
 
 Telegram - @Right_mind_bot
 
-Slack - https://bot.dialogflow.com/6ca6c2f4-b1ab-4e96-820d-5ea28b47e769
+
 
 
 * Made using Dialog Flow
